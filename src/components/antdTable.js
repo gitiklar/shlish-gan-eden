@@ -32,12 +32,17 @@ const AntdTable = () => {
     return (
         <>
             <div className="filterButtonsContainer">
-                <Button onClick={showFilterHandler}>Filter</Button>
-                <Button onClick={clearFilterHandler}>Clear Filter</Button>   
+                { employeesData && 
+                    <>
+                        <Button onClick={showFilterHandler}>Filter</Button>
+                        <Button onClick={clearFilterHandler}>Clear Filter</Button>  
+                    </>
+                }
             </div>
-            { employeesData ?  
+                { employeesData ?  
                     <Table columns={columns} dataSource={showFilter ? filterEmployees : employeesData}  pagination={{ pageSize: 5 }}/> 
-                    : <img src = {spin}/> }
+                    : <img src = {spin}/> 
+                }
         </>
     );
 }
