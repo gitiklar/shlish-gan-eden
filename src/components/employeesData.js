@@ -19,7 +19,7 @@ const EmployeesDataContainer = () => {
         <div className="innerContainer">
             <div className="listContainer">
                 <div className="topContainer">
-                    <Button onClick ={getEmployeesDataHandler}>Load Employees List</Button>
+                    {!employeesData && <Button onClick ={getEmployeesDataHandler}>Load Employees List</Button>}
                 </div>
                 <div className="mainContainer">
                     {(loadEmployeesData || employeesData) && <AntdTable/>}
